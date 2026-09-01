@@ -1,0 +1,9 @@
+scapy>=2.5.0
+matplotlib>=3.7.0
+
+# Tkinter ships with the standard CPython installer on Windows/macOS.
+# On Debian/Ubuntu Linux install it separately:
+#   sudo apt install python3-tk
+
+# Dev/test only:
+pytest>=7.0.0
