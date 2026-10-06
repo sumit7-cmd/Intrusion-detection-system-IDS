@@ -24,7 +24,7 @@ class Alert:
 
 class DetectionEngine:
     def __init__(self, thresholds=None):
-        self.thresholds = thresholds or {
+        defaults = {
             "high_traffic": 100,
             "port_scan": 10,
             "syn_flood": 50,
@@ -32,6 +32,7 @@ class DetectionEngine:
             "dns_attack": 80,
             "bruteforce": 20,
         }
+        self.thresholds = {**defaults, **(thresholds or {})}
         self.window = defaultdict(lambda: {
             "packets": 0,
             "ports": set(),
